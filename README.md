@@ -10,7 +10,6 @@ When a user uses the command "my-tweets", liri will pull the last 20 tweets from
 ## Spotify
 
 ![spotify-this](images/spotify-this.PNG)
-![spotify-default](images/spotify-default.PNG)
 
 When a user uses the the command "spotify-this-song <'song title'>", liri will pull the song's:
 * Name
@@ -18,12 +17,14 @@ When a user uses the the command "spotify-this-song <'song title'>", liri will p
 * Spotify Link
 * Album Name
 
+![spotify-default](images/spotify-default.PNG)
+
 If no song title is provided, the default song is Smash Mouth's "All Star"
 
 ## OMDB
 
 ![movie-this](images/movie-this.PNG)
-![movie-default](images/movie-default.PNG)
+
 
 When a user uses the command "movie-this <'movie title'>", liri will pull the movie's:
 * Title
@@ -34,6 +35,8 @@ When a user uses the command "movie-this <'movie title'>", liri will pull the mo
 * Language
 * Plot
 * Actors and Actresses
+
+![movie-default](images/movie-default.PNG)
 
 If the user does not provide a movie title, liri will default to providing information for the movie "Mr. Nobody"
 
