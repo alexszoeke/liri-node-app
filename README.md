@@ -3,14 +3,14 @@ This app is used to demonstrate my knowledge of Node.js
 
 ## Twitter
 
-![my-tweets](images/my-tweets.png)
+![my-tweets](images/my-tweets.PNG)
 
 When a user uses the command "my-tweets", liri will pull the last 20 tweets from my personal twitter feed. (@web_dev_alex)
 
 ## Spotify
 
-![spotify-this](images/spotify-this.png)
-![spotify-default](images/spotify-default.png)
+![spotify-this](images/spotify-this.PNG)
+![spotify-default](images/spotify-default.PNG)
 
 When a user uses the the command "spotify-this-song <'song title'>", liri will pull the song's:
 * Name
@@ -22,8 +22,8 @@ If no song title is provided, the default song is Smash Mouth's "All Star"
 
 ## OMDB
 
-![movie-this](images/movie-this.png)
-![movie-default](images/movie-default.png)
+![movie-this](images/movie-this.PNG)
+![movie-default](images/movie-default.PNG)
 
 When a user uses the command "movie-this <'movie title'>", liri will pull the movie's:
 * Title
@@ -39,12 +39,13 @@ If the user does not provide a movie title, liri will default to providing infor
 
 ## Do What It Says
 
-![do-what-it-says](images/do-what-it-says.png)
+![do-what-it-says](images/do-what-it-says.PNG)
 
 This command will pull information from Spotify for Taylor Swift's, "Gorgeous" from random.txt
 
 ## Commands
 
-![commands](images/commands.png)
+![commands](images/commands.PNG)
+
 
 If a user provides an invalid command or no command at all, liri will provide a list of valid commands that can be used. 
