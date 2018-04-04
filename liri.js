@@ -1,3 +1,4 @@
+// Variables and requires node packages
 require("dotenv").config();
 var fs = require("fs");
 var keys = require("./keys.js");
@@ -9,13 +10,14 @@ var command = process.argv[2];
 
 
 
-
+// keys
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
 
-
+// switch case
 switch (command) {
+    // if user types "my tweets," the last 20 tweets from the twitter account @web_dev_alex will display
     case "my-tweets":
         var params = { screen_name: 'web_dev_alex', count: 20 };
         client.get('statuses/user_timeline', params, function (error, tweets, response) {
@@ -26,6 +28,7 @@ switch (command) {
             }
         });
         break;
+    // if the user types "spotify-this-song" plus a song name, liri will pull the song's: Name, Artist, Spotify Link & Album Name
     case "spotify-this-song":
         var title = process.argv[3];
         var trackItems;
@@ -38,6 +41,7 @@ switch (command) {
                 console.log("Song: " + trackItems.name + '\n' + "Artist: " + trackItems.artists[0].name + '\n' + "Spotify Link: " + trackItems.album.external_urls.spotify + '\n' + "Album Name: " + trackItems.album.name);
 
             });
+            // If no song title is provided, the default song is Smash Mouth's "All Star"
         } else {
             spotify.search({ type: 'track', query: "All Star", limit: 1 }, function (err, data) {
                 if (err) {
@@ -50,9 +54,11 @@ switch (command) {
 
 
         break;
+    // When a user uses the command "movie-this <'movie title'>", liri will pull the movie's: Title, Release Year, imdbRating, Rotten Tomatoes Score, Country in which production took place,Language, Plot, Actors and Actresses
     case "movie-this":
         var nodeArgs = process.argv;
         var movieName = "";
+        // allows for more than one word to be used as one argument
         for (var i = 3; i < nodeArgs.length; i++) {
 
             if (i > 3 && i < nodeArgs.length) {
@@ -60,7 +66,6 @@ switch (command) {
                 movieName = movieName + "+" + nodeArgs[i];
 
             }
-
             else {
 
                 movieName += nodeArgs[i];
@@ -76,6 +81,7 @@ switch (command) {
                 }
             });
         }
+        //If the user does not provide a movie title, liri will default to providing information for the movie "Mr. Nobody"
         else {
             movieName = "Mr. Nobody";
             queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
@@ -89,6 +95,7 @@ switch (command) {
 
 
         break;
+        // This command will pull information from Spotify for Taylor Swift's, "Gorgeous" from random.txt
     case "do-what-it-says":
         fs.readFile("random.txt", "utf8", function (err, data) {
             if (err) {
@@ -104,5 +111,6 @@ switch (command) {
             });
         });
         break;
+        // if the wrong command or no command is used, liri will display all valid commands
     default: console.log("Use one of the following commands: my-tweets, spotify-this-song, movie-this, or do-what-it-says")
 };
