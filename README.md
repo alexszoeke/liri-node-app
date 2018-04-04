@@ -1,6 +1,10 @@
 # liri-node-app
 This app is used to demonstrate my knowledge of Node.js
 
+## Demo
+
+![demo](images/liri.gif)
+
 ## Twitter
 
 ![my-tweets](images/my-tweets.PNG)
