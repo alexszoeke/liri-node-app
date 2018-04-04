@@ -23,7 +23,7 @@ switch (command) {
         client.get('statuses/user_timeline', params, function (error, tweets, response) {
             if (!error) {
                 for (var i = 0; i < tweets.length; i++) {
-                    console.log("@" + tweets[i].user.screen_name + '\n' + tweets[i].text + '\n');
+                    console.log("@" + tweets[i].user.screen_name + '\n' + tweets[i].text + '\n' + "Retweets: " + tweets[i].retweet_count + ' ' + "Favorites: " + tweets[i].favorite_count + '\n' + tweets[i].created_at +'\n=====================================');
                 }
             }
         });
